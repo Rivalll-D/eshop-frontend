@@ -1,12 +1,13 @@
 import React from 'react';
-import CardItem from '../components/CardItem';
+import CardList from '../components/CardList';
+import { Container } from 'react-bootstrap';
 
 function Home (){
     return (
-        <>
+        <Container>
             <h1>HALAMAN AWAL</h1>
-            <CardItem />
-        </>
+            <CardList />
+        </Container>
     );
 };
 

@@ -1,16 +1,33 @@
 import React from "react";
-import { Card } from 'react-bootstrap';
+import { Card, Badge, Button } from 'react-bootstrap';
+import { MdShoppingCart } from 'react-icons/md';
+import { getPrice } from "../utils";
 
-function CardItem(){
+const imageStyle = {
+    width: '100%',
+    objectFit: 'contain',
+    padding: 5,
+    maxHeight: 300,
+    minHeight: 200,
+};
+
+function CardItem({item}) {
     return (
         <Card style={{ width: '18rem' }}>
-        <Card.Img variant="top" src="holder.js/100px180?text=Image cap" />
+        <Card.Img style={imageStyle} variant="top" src={item.image} />
         <Card.Body>
-          <Card.Title>Card Title</Card.Title>
+          <Card.Title>{item.title}</Card.Title>
           <Card.Text>
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
+            {item.description}
           </Card.Text>
+          <div className="d-flex justify-content-between align-items-center">
+            <h6>
+                <Badge bg="secondary">{getPrice(item.price)}</Badge>
+            </h6>
+            <Button>
+                <MdShoppingCart/>
+            </Button>
+          </div>
         </Card.Body>
       </Card>
     );
