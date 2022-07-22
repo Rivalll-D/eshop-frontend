@@ -5,7 +5,7 @@ import { Container } from 'react-bootstrap';
 function Home (){
     return (
         <Container>
-            <h1>HALAMAN AWAL</h1>
+            <h1>HOME</h1>
             <CardList />
         </Container>
     );

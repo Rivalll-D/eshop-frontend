@@ -14,7 +14,7 @@ const imageStyle = {
 function CardItem({item}) {
     return (
         <Card style={{ width: '18rem' }}>
-        <Card.Img style={imageStyle} variant="top" src={item.image} />
+        <Card.Img style={imageStyle} variant="top" src={`https://eshop.reskimulud.my.id/products/image/${item.image}`} />
         <Card.Body>
           <Card.Title>{item.title}</Card.Title>
           <Card.Text>
