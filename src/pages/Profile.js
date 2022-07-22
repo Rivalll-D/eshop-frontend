@@ -12,11 +12,12 @@ function Profile({isLogedIn, setIsLogedIn}) {
         const token = localStorage.getItem('eshop_jwt');
         axios.get('http://eshop.reskimulud.my.id/user', {
             headers: {
-                'Authorize': `Bearer ${token}`,
+                'Authorization': `Bearer ${token}`,
             },
         }).then((res) => {
-            setName(res.data.data.name);
-            setEmail(res.data.data.email);
+            console.log(res);
+            setName(res.data.data.user.name);
+            setEmail(res.data.data.user.email);
         });
     }, []);
 
